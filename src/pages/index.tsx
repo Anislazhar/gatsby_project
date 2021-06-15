@@ -1,14 +1,14 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, PageProps } from "gatsby"
 import Layout from "../components/Layout"
 import { header, btn } from "../styles/home.module.css"
 import Img from "gatsby-image"
 
-export default function Home({ data }) {
+const Home: React.FC<PageProps> = ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <section className={header}>
+      <section className={header}> 
         <div>
           <h2>Design</h2>
           <h3>Develop & Deploy</h3>
@@ -22,6 +22,8 @@ export default function Home({ data }) {
     </Layout>
   )
 }
+
+export default Home
 
 export const query = graphql`
   query Banner {
